@@ -1,4 +1,17 @@
 #search-sm input.btn, button {
-    border: 1px solid #333!important;
-    
+    border: 1px solid #333!important;   
 }
+
+
+@media screen and (min-width: 768px) {
+    #search_sm {
+      display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #search {
+      display: none
+    }
+}
+
