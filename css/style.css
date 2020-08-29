@@ -35,3 +35,8 @@ body {
 nav a:active {
   color: #239a23!important;
 }
+
+.active {
+  color: #fefefe;
+  background-color: rgb(37, 47, 104)!important;
+}
