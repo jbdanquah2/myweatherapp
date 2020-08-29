@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(68, 129, 129, 0.5);
+}
+
 #search-sm input.btn, button {
     border: 1px solid #333!important;   
 }
@@ -13,5 +17,18 @@
     #search {
       display: none
     }
+}
+
+.main {
+  background-color: #ababab;
+  border: 1px solid #777;
+  border-radius: 2%;
+  width:  auto; 
+}
+
+.icon {
+  position: relative;
+  top: -80px;
+  z-index: 2;
 }
 
