@@ -7,15 +7,21 @@ body {
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     #search_sm {
       display: none;
+      pointer-events: none;
+    }
+    .main::before {
+      min-width: 690px;
+      min-height: 234px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     #search {
-      display: none
+      display: none;
+      pointer-events: none;
     }
 }
 
@@ -28,8 +34,8 @@ body {
 
 .icon {
   position: relative;
-  top: -80px;
-  z-index: 2;
+  top:-100px!important ;
+  /* z-index: 2; */
 }
 
 nav a:active {
@@ -39,4 +45,8 @@ nav a:active {
 .active {
   color: #fefefe;
   background-color: rgb(37, 47, 104)!important;
+}
+
+.input-group-text:focus {
+  background-color: #5668cc!important;
 }

@@ -28,31 +28,28 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="hourly.html">Hourly</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#" tabindex="-1"="true">7 Days</a>
-                </li>
             </ul>
-            <form id="search" class="form-inline">
+            <div id="searchForm" class="form-inline">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="search" aria-label="search"
+                    <input id="search" type="text" name="search" class="form-control" placeholder="enter city or town or country" aria-label="search"
                         aria-describedby="basic-addon1">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="submit"><i class="fas fa-search"></i></span>
+                    <div class="input-group-prepend shadow">
+                        <span role="submit" class="input-group-text" id="submit"><i class="fas fa-search"></i></span>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </nav>
-    <div id="search_sm" class="container px-5 pt-1">
-        <form class="form-inline">
+    <div id="search_sm" class="container px-5 pt-1 justify-content-center">
+        <div class="form-inline">
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="search" aria-label="search"
+                <input id="search2"  type="text" name="search2" class="form-control" placeholder="enter city or town or country" aria-label="search"
                     aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
-                    <span class="input-group-text btn" id="submit"><i class="fas fa-search"></i></span>
+                    <span role="submit2" class="input-group-text btn" id="submit2"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-        </form>
+        </div>
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item ">
@@ -61,127 +58,20 @@
                 <li class="nav-item">
                     <a class="nav-link px-2 py-1 mt-2 bg-light shadow" href="hourly.html">Hourly</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link px-2 py-1 m-2 bg-light shadow" href="#">7 Days</a>
-                </li>
             </ul>
         </nav>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-xs-6">
-                <div class="main shadow mt-5 px-4 pt-4 clearfix">
-                    <h5 class="mb-0">Accra Weather</h5>
-                    <p class="my-0">as of 8:05 GMT</p>
-                    <h1 class="my-4">26`</h1>
-                    <p class="m-0">Fair</p>
-                    <span class="float-right my-0 text-primary"><i class=" icon fas fa-cloud-sun fa-5x"></i>
-                        <p class="icon ml-5 m-2">28`/23`</p>
-                    </span>
-                    <p class="mb-0">15% chance of until 9:00</p>
+            <div class="col-lg-8 col-xs-6 clearfix ">
+                <div id="main" class="main shadow mt-5   p-4 ">
+                   <!-- main weather -->
                 </div>
             </div>
             <div class="col-lg-8 col-xs-6">
-                <div class="main shadow mt-3 px-4 pt-4 clearfix">
-                    <h5 class="mb-0">Accra: Today's Forecast</h5>
-                    <div class="row">
-                        <div class="p-2 pl-3">
-                            <h6><small>Morning</small></h6>
-                            <h3>27`</h3>
-                            <span class="text-primary"><i class="my-2 fas fa-cloud-sun fa-2x"></i></span>
-                            <p>` 15%</p>
-                        </div>
-                        <div class="p-2">
-                            <h6><small>Afternoon</small></h6>
-                            <h3>27`</h3>
-                            <span class="text-primary"><i class="my-2 fas fa-cloud-sun fa-2x"></i></span>
-                            <p>` 15%</p>
-                        </div>
-                        <div class="p-2">
-                            <h6><small>Evening</small></h6>
-                            <h3>27`</h3>
-                            <span class="text-primary"><i class="my-2 fas fa-cloud-sun fa-2x"></i></span>
-                            <p>` 15%</p>
-                        </div>
-                        <div class="p-2">
-                            <h6><small>Overnight</small></h6>
-                            <h3>27`</h3>
-                            <span class="text-primary"><i class="my-2 fas fa-cloud-sun fa-2x"></i></span>
-                            <p>` 15%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8 col-xs-6">
-                <div class="main shadow mt-3 px-4 pt-4 clearfix">
-                    <h5 class="mb-0">Accra: Today's Weather</h5>
-                    <div class="row">
-                        <div class="col-6">
-                            <h1>31`</h1>
-                            <p>Feels like</p>
-                        </div>
-                        <div class="col-6 float-right">
-                            <span class="text-primary float-right"><i class="my-2 fas fa-cloud-sun fa-3x"></i></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 float-right">                           
-                            
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                            <div class="detail py-2 border-top">
-                                <span>!</span>
-                                <span>Feels like</span>
-                                <span class="float-right">28`/23`</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="feel_like" class="main shadow mt-3 px-4 pt-4 clearfix">
+                    <!-- Feels like section -->
                 </div>
             </div>
         </div>

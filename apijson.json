@@ -1,0 +1,29 @@
+{
+
+    "lat": 5.6,
+    "lon": 0.19,
+    "timezone": "Africa/Accra",
+    "timezone_offset": 0,
+    "current": {
+        "dt": 1598797253,
+        "sunrise": 1598766787,
+        "sunset": 1598810812,
+        "temp": 301.15,
+        "feels_like": 299.49,
+        "pressure": 1012,
+        "humidity": 65,
+        "dew_point": 293.96,
+        "uvi": 13.81,
+        "clouds": 20,
+        "visibility": 10000,
+        "wind_speed": 8.2,
+        "wind_deg": 190,
+        "weather": [
+            {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+            }
+        ]
+    }
