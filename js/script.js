@@ -56,7 +56,7 @@ const getData = (data, location) => {
                       <p class="my-0">as of ${currentTime}</p>
                       <h1 class="my-4">${data.current.temp}</h1>
                       <p class="">${data.current.weather[0].description}</p>
-                      <img class="icon float-right" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png">  
+                      <img class="icon float-right" src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png">  
                       `;
   document.querySelector('#main').innerHTML = output;
 
@@ -67,7 +67,7 @@ const getData = (data, location) => {
                 <h1 class="mb-2">${data.current.feels_like}</h1>               
             </div>
             <div class="col-6 float-right">
-            <img class=" float-right" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"> 
+            <img class=" float-right" src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"> 
             </div>
         </div>
         <div class="row">
@@ -127,7 +127,7 @@ const getData = (data, location) => {
 const searchQuery = ( timeZone) => {
   console.log(timeZone);
   let lon, lat, location;
-  const url2 = `http://api.openweathermap.org/data/2.5/weather?q=${timeZone}&APPID=5290defddab27e09fb2b75fd44ba25f4`;
+  const url2 = `https://api.openweathermap.org/data/2.5/weather?q=${timeZone}&APPID=5290defddab27e09fb2b75fd44ba25f4`;
   fetch(url2).then(response => {
     if (response.status == 200) {
       // console.log('response', response);
