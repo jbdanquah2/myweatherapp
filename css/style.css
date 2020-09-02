@@ -8,7 +8,7 @@ body {
 
 
 @media screen and (min-width: 992px) {
-    #search_div {
+    .search_div2 {
       display: none;
     }
     .main::before {
@@ -18,7 +18,7 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-    #search_div2 {
+    .search_div {
       display: none;
     }
 }
