@@ -11,7 +11,7 @@
 body {
   color: #fefefe;
   font-family: 'lora', sans-serif;
-  background-image: url('../img/pic2.jpg');
+  background-image: url('../img/pic6.jpg');
   background-size: cover ;
   background-position: bottom;
 }
@@ -135,12 +135,16 @@ table {
   scrollbar-width: 1px;
 }
 
-table::-webkit-scrollbar {
+table::-webkit-scrollbar, table::-webkit-scrollbar-track, table::-webkit-scrollbar-thumb  {
   display: none;
 }
 
 th, td {
   padding: 10px;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .article {

@@ -85,24 +85,24 @@ const getDailyData = (data, location) => {
     let output = `
     <table border="0">
     <thead>
-        <th>Day</th>
+        <th class="align-left">Day</th>
         <th>Weather</th>
-        <th>Temp Min/Max</th>
+        <th>Description</th>
+        <th>Temp</th>
         <th>Humidity</th>
         <th>Wind</th>
-        <th>Pressure</th>  
     </thead>
     <body>`;
 
     for ( let i=0; i < data.daily.length-1; i++ ) {
         let [ currentTime, day ] = dateBuilder(data.daily[i].dt);
      output  += `<tr>
-        <th>${day}</th>
+        <th class="align-left">${day}</th>
         <td class="icon"><small><img class="iconImg" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png"></small></td>
+        <td><small>${data.daily[i].weather[0].description}</small></td>
         <td>${Math.round(data.daily[i].temp.min)}°c / ${Math.round(data.daily[i].temp.max)}°c</td>
         <td>${data.daily[i].humidity}%</td>
         <td>${data.daily[i].wind_speed}%</td>
-        <td>${data.daily[i].pressure}</td>
         </tr>`;
     }
       
@@ -136,6 +136,14 @@ const searchQuery = ( timeZone ) => {
       console.log(err);
     });
   }
+
+  const search = document.querySelector('#searchTerm');
+  search.addEventListener('keypress', function(e) {
+    const searchTerm = search.value;
+    if (searchTerm) {
+        if (e.key === 'Enter') searchQuery( searchTerm );
+    }
+  });
 
   const submit = document.querySelector('#submit');   
   //  listens for click event from the search box
