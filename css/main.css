@@ -11,7 +11,7 @@
 body {
   color: #fefefe;
   font-family: 'lora', sans-serif;
-  background-image: url('/img/pic2.jpg');
+  background-image: url('../img/pic2.jpg');
   background-size: cover ;
   background-position: bottom;
 }
