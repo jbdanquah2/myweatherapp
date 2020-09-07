@@ -162,7 +162,7 @@ const dateBuilder = (currentDate) => {
 
 
 function myFunction() {
-    setTimeout(showPage, 2000);
+    setTimeout(showPage, 3000);
 }
   
 function showPage() {
