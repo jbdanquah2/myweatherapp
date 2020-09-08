@@ -3,7 +3,7 @@
 //obtained from getLocation
 window.onload = function () {
     getLocation();
-    // myFunction(); 
+    myFunction(); 
 };
 
 // this gets the location of the user when the page loads
