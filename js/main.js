@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      navigator.serviceWorker.register('service-worker.js', { scope: '/' }).then(function(registration) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }, function(err) {
@@ -51,7 +51,7 @@ const getCurrentWeather = (url, timeZone) => {
                 getCurrentData(data, timeZone);
 
             }).catch(ex => {
-                console.log(ex);
+                // console.log(ex);
             });
         }
     }).catch(err => {
@@ -141,7 +141,7 @@ const searchQuery = ( timeZone ) => {
           getDailyWeather( dailyUrl )
           console.log('login::', lon, 'latit::', lat);
         }).catch(ex => {
-          console.log(ex);
+        //   console.log(ex);
         });
       } else {
         alert('sorry, location not found. Check the spelling and try again!')
