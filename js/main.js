@@ -1,3 +1,17 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+  
+
+
 // run getLocation when pages loads... 
 //this will also run getWeather with the location of the user...
 //obtained from getLocation
@@ -81,8 +95,8 @@ const getCurrentData = (data, location) => {
 }
 
 const getDailyData = (data, location) => {
-    
     let output = `
+    <h3>Daily Weather for the Week</h3>
     <table border="0">
     <thead>
         <th class="align-left">Day</th>
@@ -95,14 +109,14 @@ const getDailyData = (data, location) => {
     <body>`;
 
     for ( let i=0; i < data.daily.length-1; i++ ) {
-        let [ currentTime, day ] = dateBuilder(data.daily[i].dt);
+        let [ currentTime, day ] = dateBuilder(data.daily[i].sunrise);
      output  += `<tr>
-        <th class="align-left">${day}</th>
+        <th class="align-left">${day}<br><small>${currentTime.substring(currentTime.indexOf(',')+1,currentTime.lastIndexOf(','), 1)}</small></th>
         <td class="icon"><small><img class="iconImg" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png"></small></td>
         <td><small>${data.daily[i].weather[0].description}</small></td>
         <td>${Math.round(data.daily[i].temp.min)}°c / ${Math.round(data.daily[i].temp.max)}°c</td>
         <td>${data.daily[i].humidity}%</td>
-        <td>${data.daily[i].wind_speed}%</td>
+        <td>${data.daily[i].wind_speed}km/hr</td>
         </tr>`;
     }
       
@@ -170,7 +184,7 @@ const dateBuilder = (currentDate) => {
 
 
 function myFunction() {
-    setTimeout(showPage, 3000);
+    setTimeout(showPage, 4000);
 }
   
 function showPage() {
