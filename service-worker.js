@@ -15,7 +15,7 @@
 
 
 const filesToCache = [
-    '/',
+    
     'css/main.css',
     'img/pic5.jpg',
     'index.html',
