@@ -1,6 +1,7 @@
 {
     "name": "MyWeatherApp",
     "short_name": "MyWeather",
+    "description": "A simple weather app.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
