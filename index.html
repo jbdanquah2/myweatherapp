@@ -19,16 +19,22 @@
 
 <body>
     <div class="app-wrap">
+        <nav>
+            <h4 id="brand">weather App</h4><br>
+        </nav>
         <header>
             <div class="topHeader">
-                <input id="searchTerm" type="text" autocomplete="off" class="search-box"
-                    placeholder="Search for a city...">
-                <button id="submit" class="search-box" type="button"><i class="fas fa-search"></i></button>
+                <form >
+                    <label for="searchTerm"></label>
+                    <input name="searchTerm" id="searchTerm" type="text" autocomplete="off" class="search-box"
+                        placeholder="Search with a city name...">
+                    <button id="submit" name="search-bottun" class="search-box" type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
         </header>
         <div class="weatherWrap">
             <main id="main" class="">
-                <div id="loader"></div>
+
             </main>
 
             <section class="days">
@@ -37,11 +43,11 @@
                 </div>
 
             </section>
-            <!-- </iframe>  -->
         </div>
-
-
     </div>
+    <footer>
+        <p>Google Developer Scholarship</p>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/all.min.js"></script>
