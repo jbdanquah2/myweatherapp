@@ -41,23 +41,23 @@ const init = () => {
     const data2 = localStorage.getItem('dailyWeather') ? JSON.parse(localStorage.getItem('dailyWeather')) : {};
     if (data !== {}) { getCurrentData(data) };
     if (data2 !== {}) { getDailyData(data2) };
-    console.log('local storage: ', JSON.parse(localStorage.getItem('weatherData')));
-    console.log('local storage22: ', JSON.parse(localStorage.getItem('dailyWeather')));
+    // console.log('local storage: ', JSON.parse(localStorage.getItem('weatherData')));
+    // console.log('local storage22: ', JSON.parse(localStorage.getItem('dailyWeather')));
 }
 
 //this runs the api to the get the weather info
 const getCurrentWeather = (url, timeZone) => {
-    console.log('urls:', url)
+    // console.log('urls:', url)
     fetch(url).then(response => {
         if (response.status == 200) {
-            console.log('response', response);
+            // console.log('response', response);
             response.json().then(data => {
                 localStorage.setItem('weatherData', JSON.stringify(data))
-                console.log('data', data);
+                // console.log('data', data);
                 getCurrentData(data, timeZone);
 
             }).catch(ex => {
-                // console.log(ex);
+                console.log(ex);
             });
         }
     }).catch(err => {
@@ -66,13 +66,13 @@ const getCurrentWeather = (url, timeZone) => {
 }
 
 const getDailyWeather = (url, timeZone) => {
-    console.log('dailyUrl:', url)
+    // console.log('dailyUrl:', url)
     fetch(url).then(response => {
         if (response.status == 200) {
-            console.log('response', response);
+            // console.log('response', response);
             response.json().then(data => {
                 localStorage.setItem('dailyWeather', JSON.stringify(data))
-                console.log('data', data);
+                // console.log('data', data);
                 getDailyData(data, timeZone);
 
             }).catch(ex => {
@@ -89,7 +89,7 @@ const getCurrentData = (data, location) => {
     let [currentTime] = dateBuilder(data.dt);
     const check = data.weather[0].description.indexOf('rain');
     const status = check == -1 ? '<div class="safe">Safe to go out</div>' : '<div class="not-safe">Its Not safe</div>';
-    console.log('check: ', check);
+    // console.log('check: ', check);
     const output = `
     <section class="location">
         <div class="city">${data.name}, ${data.sys.country}</div>
@@ -137,7 +137,7 @@ const getDailyData = (data, location) => {
 }
 
 const searchQuery = (timeZone) => {
-    console.log(timeZone);
+    // console.log(timeZone);
     let lon, lat, location;
     const currenUrl = weatherByName(timeZone);
     getCurrentWeather(currenUrl)
@@ -150,7 +150,7 @@ const searchQuery = (timeZone) => {
                 lat = data.coord.lat;
                 let [, dailyUrl] = weatherByCoord(lat, lon);
                 getDailyWeather(dailyUrl)
-                console.log('login::', lon, 'latit::', lat);
+                // console.log('login::', lon, 'latit::', lat);
             }).catch(ex => {
                 console.log(ex);
             });
@@ -192,7 +192,7 @@ const dateBuilder = (currentDate) => {
     let dat = (currentDate) * 1000;
     const dateTime = new Date(dat).toLocaleString();
     const dt = new Date(dat);
-    console.log(dt);
+    // console.log(dt);
     let day = days[dt.getDay()];
     let currentTime = `${day}, ${dateTime}`
 
