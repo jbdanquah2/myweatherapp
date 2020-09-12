@@ -39,9 +39,10 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0 15px;
+  
 }
 
-header .topHeader {
+#topHeader {
   text-align: center;
   width: 100%;
   max-width: 350px;
@@ -49,7 +50,9 @@ header .topHeader {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 12px 0px 16px 0px;
   border-bottom: 3px solid #df8e00;
-
+  position: absolute;
+  top: 40%;
+  transition: 0.2s ease-out;
 }
 
 header input:focus {
@@ -115,7 +118,6 @@ main {
   }
 
 }
-
 
 .location .city {
   color: #fff;
@@ -187,7 +189,7 @@ main {
 table {
   display: block;
   overflow-x: auto;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   scrollbar-color: #01060a #030911;
   scrollbar-width: 1px;
 }
@@ -207,16 +209,16 @@ td {
   text-align: left;
 }
 
-.weatherWrap {
+#weatherWrap {
   -webkit-columns: 2 200px;
   -moz-columns: 2 200px;
   columns: 2 200px;
   -webkit-column-gap: 4em;
   -moz-column-gap: 4em;
   column-gap: 4em;
-  -webkit-column-rule: 1px double #ddd;
+  /* -webkit-column-rule: 1px double #ddd;
   -moz-column-rule: 1px double #ddd;
-  column-rule: 1px double #ddd;
+  column-rule: 1px double #ddd; */
 }
 
 .days,
