@@ -102,6 +102,11 @@ main {
     height: 100vh;
   }
 
+  #topHeader {
+    max-width: 450px;
+    padding: 10px 10px;
+  }
+
   #dtitle {
     display: none;
   }
