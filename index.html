@@ -9,12 +9,12 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
+    <meta name="description" content="This is a web app for search the weather condition for a particular area. Simply a weather app!">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="preload" href="css/main.min.css">
 </head>
 
 <body>
@@ -25,10 +25,9 @@
         <header>
             <div class="topHeader">
                 <form >
-                    <label for="searchTerm"></label>
-                    <input name="searchTerm" id="searchTerm" type="text" autocomplete="off" class="search-box"
-                        placeholder="Search with a city name...">
-                    <button id="submit" name="search-bottun" class="search-box" type="submit"><i class="fas fa-search"></i></button>
+                    <input id="searchTerm" type="text" autocomplete="off" class="search-box"
+                        placeholder="Search with a city name..." name="mysearch" aria-label="Search with a city name...">
+                    <button aria-label="submit" name="searchbutton" id="submit"  class="search-box" type="submit"><i aria-label="search icon" class="fas fa-search"></i></button>
                 </form>
             </div>
         </header>

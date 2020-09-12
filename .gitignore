@@ -65,6 +65,3 @@ node_modules/
 # dotenv environment variables file
 .env
 
-main.min.js
-pic5.jpg
-main.min.css

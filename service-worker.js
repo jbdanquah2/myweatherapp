@@ -16,7 +16,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-  console.log('Fetch event for ', event.request.url);
+  // console.log('Fetch event for ', event.request.url);
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -28,7 +28,7 @@ self.addEventListener('fetch', event => {
         return fetch(event.request).then(response => {
           // Respond with custom 404 page
           if (response.status === 404) {
-            console.log('404 ', event.request.url, ' not founds');
+            // console.log('404 ', event.request.url, ' not founds');
             return caches.match('/not-found.html');
           }
           return caches.open(staticCacheName).then(cache => {
@@ -68,11 +68,11 @@ self.addEventListener('activate', event => {
 function resourceToCache() {
   return [
     '/',
-    'css/main.css',
+    'css/main.min.css',
     'img/pic5.jpg',
     'index.html',
     'js/all.min.js',
-    'js/main.js',
+    'js/main.min.js',
     'offline.html',
     'android-chrome-192x192.png',
     'android-chrome-512x512.png',
