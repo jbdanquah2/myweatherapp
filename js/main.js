@@ -50,7 +50,7 @@ const init = () => {
     if (checkObj(data)) {
         addRemoveStyle();
         getCurrentData(data)
-     };
+    };
     if (checkObj(data2)) { getDailyData(data2) };
 }
 
@@ -62,7 +62,8 @@ const getCurrentWeather = (url) => {
             response.json().then(data => {
                 localStorage.setItem('weatherData', JSON.stringify(data))
                 // console.log('data', data);
-                getCurrentData(data);
+               const output =  getCurrentData(data);
+               document.querySelector('#main').innerHTML = output;
 
             }).catch(ex => {
                 console.log(ex);
@@ -81,8 +82,8 @@ const getDailyWeather = (url) => {
             response.json().then(data => {
                 localStorage.setItem('dailyWeather', JSON.stringify(data))
                 // console.log('data', data);
-                getDailyData(data);
-
+                const output = getDailyData(data)
+                document.querySelector('#dailyWeather').innerHTML = output;
             }).catch(ex => {
                 console.log(ex);
             });
@@ -109,8 +110,7 @@ const getCurrentData = (data) => {
         <div class="hi-low">${Math.round(data.main.temp_min)}°c/${Math.round(data.main.temp_max)}°c</div>
         ${status}
     </div>`;
-
-    document.querySelector('#main').innerHTML = output;
+    return output;
 }
 
 // this gets the daily weather api json, parse it and render to the page
@@ -127,7 +127,6 @@ const getDailyData = (data) => {
         <th>Wind</th>
     </thead>
     <tbody>`;
-
     for (let i = 1; i < data.daily.length; i++) {
         let [currentTime, day] = dateBuilder(data.daily[i].sunrise);
         output += `<tr>
@@ -139,10 +138,9 @@ const getDailyData = (data) => {
         <td>${data.daily[i].wind_speed}km/hr</td>
         </tr>`;
     }
-
     output += `</tbody>
               </table> <br/><br/><br/>`;
-    document.querySelector('#dailyWeather').innerHTML = output;
+    return output;
 }
 
 // query the user query and query the api
@@ -213,7 +211,7 @@ const dateBuilder = (currentDate) => {
 }
 
 const addRemoveStyle = () => {
-    const weatherWrap = document.querySelector('#weatherWrap')
+    document.querySelector('#weatherWrap')
         .setAttribute("style", " -webkit-column-rule: 1px double #ddd;-moz-column-rule: 1px double #ddd; column-rule: 1px double #ddd;");
-    const topHeader = document.querySelector('#topHeader').setAttribute("style", "position: initial; top: 0;  transition: 0.2s ease-out;");
+    document.querySelector('#topHeader').setAttribute("style", "position: initial; top: 0;  transition: 0.2s ease-out;");
 }
