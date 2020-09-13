@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="en">
-
 <head>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description"
+        content="This is a web app for search the weather condition for a particular area. Simply a weather app!">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="This is a web app for search the weather condition for a particular area. Simply a weather app!">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css">
 </head>
-
 <body>
     <div class="app-wrap">
         <nav>
@@ -24,32 +25,26 @@
         </nav>
         <header>
             <div class="topHeader" id="topHeader">
-                <form >
+                <form>
                     <input id="searchTerm" type="text" autocomplete="off" class="search-box"
-                        placeholder="Search with a city name..." name="mysearch" aria-label="Search with a city name...">
-                    <button aria-label="submit" name="searchbutton" id="submit"  class="search-box" type="submit"><i aria-label="search icon" class="fas fa-search"></i></button>
+                        placeholder="Search with a city name..." name="mysearch"
+                        aria-label="Search with a city name...">
+                    <button aria-label="submit" name="searchbutton" id="submit" class="search-box" type="submit"><i
+                            aria-label="search icon" class="fas fa-search"></i></button>
                 </form>
             </div>
         </header>
         <div class="weatherWrap" id="weatherWrap">
-            <main id="main" class="">
-
-            </main>
-
+            <main id="main" class=""></main>
             <section class="days">
-                <div id="dailyWeather" class="table">
-
-                </div>
-
+                <div id="dailyWeather" class="table"></div>
             </section>
         </div>
     </div>
     <footer>
         <p>jbdanquah &copy; GADS </p>
     </footer>
-
     <script src="js/main.min.js"></script>
     <script src="js/all.min.js"></script>
 </body>
-
 </html>
