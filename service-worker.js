@@ -1,6 +1,6 @@
 let filesToCache = resourceToCache();
 
-const staticCacheName = 'weather-cache-v4';
+const staticCacheName = 'weather-cache-v5';
 
 self.addEventListener('install', event => {
   console.log('Attempting to install service worker and cache static assets');
@@ -38,7 +38,7 @@ self.addEventListener('fetch', event => {
         });
 
       }).catch(error => {
-        console.log("Hey your app is offline")
+        console.log("Hey your app is offline", error);
         //Respond with custom offline page
         return caches.match('/offline.html');
       })

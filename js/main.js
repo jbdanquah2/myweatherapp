@@ -49,12 +49,10 @@ const init = () => {
     const data2 = localStorage.getItem('dailyWeather') ? JSON.parse(localStorage.getItem('dailyWeather')) : {};
     if (checkObj(data)) {
         addRemoveStyle();
-        const output =  getCurrentData(data);
-        document.querySelector('#main').innerHTML = output;
+        getCurrentData(data);
     };
     if (checkObj(data2)) { 
-        const output = getDailyData(data)
-        document.querySelector('#dailyWeather').innerHTML = output;
+        getDailyData(data2);
      };
 }
 
@@ -67,8 +65,6 @@ const getCurrentWeather = (url) => {
                 localStorage.setItem('weatherData', JSON.stringify(data))
                 // console.log('data', data);
                const output =  getCurrentData(data);
-               document.querySelector('#main').innerHTML = output;
-
             }).catch(ex => {
                 console.log(ex);
             });
@@ -86,8 +82,7 @@ const getDailyWeather = (url) => {
             response.json().then(data => {
                 localStorage.setItem('dailyWeather', JSON.stringify(data))
                 // console.log('data', data);
-                const output = getDailyData(data)
-                document.querySelector('#dailyWeather').innerHTML = output;
+                getDailyData(data)               
             }).catch(ex => {
                 console.log(ex);
             });
@@ -114,7 +109,7 @@ const getCurrentData = (data) => {
         <div class="hi-low">${Math.round(data.main.temp_min)}°c/${Math.round(data.main.temp_max)}°c</div>
         ${status}
     </div>`;
-    return output;
+    document.querySelector('#main').innerHTML = output;
 }
 
 // this gets the daily weather api json, parse it and render to the page
@@ -144,7 +139,7 @@ const getDailyData = (data) => {
     }
     output += `</tbody>
               </table> <br/><br/><br/>`;
-    return output;
+    document.querySelector('#dailyWeather').innerHTML = output;
 }
 
 // query the user query and query the api
@@ -152,7 +147,7 @@ const searchQuery = (timeZone) => {
     // console.log(timeZone);
     let lon, lat, location;
     const currenUrl = weatherByName(timeZone);
-    getCurrentWeather(currenUrl)
+    getCurrentWeather(currenUrl);
     fetch(currenUrl).then(response => {
         if (response.status == 200) {
             // console.log('response', response);
@@ -161,7 +156,7 @@ const searchQuery = (timeZone) => {
                 lon = data.coord.lon;
                 lat = data.coord.lat;
                 let [, dailyUrl] = weatherByCoord(lat, lon);
-                getDailyWeather(dailyUrl)
+                getDailyWeather(dailyUrl);
             }).catch(ex => {
                 console.log(ex);
             });
