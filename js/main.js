@@ -49,9 +49,13 @@ const init = () => {
     const data2 = localStorage.getItem('dailyWeather') ? JSON.parse(localStorage.getItem('dailyWeather')) : {};
     if (checkObj(data)) {
         addRemoveStyle();
-        getCurrentData(data)
+        const output =  getCurrentData(data);
+        document.querySelector('#main').innerHTML = output;
     };
-    if (checkObj(data2)) { getDailyData(data2) };
+    if (checkObj(data2)) { 
+        const output = getDailyData(data)
+        document.querySelector('#dailyWeather').innerHTML = output;
+     };
 }
 
 // query api for current weather info
